@@ -30,6 +30,7 @@ public class MemberController {
 
     @PostMapping("/test")
     public void test (@RequestBody TestDto testDto) {
-        System.out.println(TokenGenerator.decrypt(testDto.getToken()));
+        String token = testDto.getToken();
+        System.out.println(TokenGenerator.decrypt(token));
     }
 }
