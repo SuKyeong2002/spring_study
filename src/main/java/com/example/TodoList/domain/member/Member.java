@@ -18,7 +18,7 @@ public class Member {
     private Long userId;
 
     @Column(nullable = false, unique = true)
-    private String username;
+    private String loginId;
 
     @Column(nullable = false)
     private String password;

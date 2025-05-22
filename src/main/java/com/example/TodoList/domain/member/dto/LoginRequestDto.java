@@ -1,19 +1,18 @@
-package com.example.TodoList.domain.member;
+package com.example.TodoList.domain.member.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.antlr.v4.runtime.misc.NotNull;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-// json -> object
-public class SignupRequestDto {
+public class LoginRequestDto {
 
     @NotBlank
-    String username;
+    String loginId;
+
+    @NotBlank
     String password;
-    String nickname;
 }
