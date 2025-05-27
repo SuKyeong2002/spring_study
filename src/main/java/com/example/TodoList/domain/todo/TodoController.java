@@ -1,12 +1,12 @@
 package com.example.TodoList.domain.todo;
 
 import com.example.TodoList.domain.todo.dto.CreateRequestDto;
+import com.example.TodoList.domain.todo.dto.TodoResponseDto;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("api/todo")
@@ -16,7 +16,12 @@ public class TodoController {
 
     @PostMapping()
     public void createTodo (@RequestBody @Valid CreateRequestDto createRequestDto) {
-        todoService.CreateTodo(createRequestDto);
+        todoService.createTodo(createRequestDto);
+    }
+
+    @GetMapping()
+    public List<TodoResponseDto> readTodos () {
+        return todoService.readTodos();
     }
 
 }
